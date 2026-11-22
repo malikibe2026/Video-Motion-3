@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<title>7 Syarat Taubat</title>
+<style>
+@font-face{font-family:Jak;src:url(fonts/plus-jakarta-sans-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Jak;src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Jak;src:url(fonts/plus-jakarta-sans-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:Int;src:url(fonts/inter-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:Int;src:url(fonts/inter-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Int;src:url(fonts/inter-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Ami;src:url(fonts/amiri-arabic-700-normal.woff2);font-weight:700}
+:root{--gold:#F2C230;--gold2:#E0B44A;--navy:#06112A;--ink:#EAF0FA}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--navy)}
+body{font-family:Int,sans-serif;color:var(--ink)}
+#stage{position:absolute;inset:0;overflow:hidden}
+.abs{position:absolute}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 40%,#12306A 0%,#0A1C42 45%,#050C20 100%)}
+#tint{position:absolute;inset:0;mix-blend-mode:screen}
+#pat{position:absolute;inset:-200px;opacity:.07;background-size:150px 150px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 70% at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
+.dust{position:absolute;border-radius:50%;background:#FFE7A0}
+.scene{position:absolute;inset:0;opacity:0}
+.k{font-family:Jak;font-weight:700;font-size:22px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px}
+.k:before{content:"";width:44px;height:3px;background:var(--gold);display:block}
+.h{font-family:Jak;font-weight:800;line-height:1.05;color:#fff}
+.g{color:var(--gold)}
+.word{display:inline-block;will-change:transform}
+.line{position:absolute;left:0;right:0;text-align:center}
+/* captions */
+#cap{position:absolute;left:50%;bottom:58px;transform:translateX(-50%);max-width:1560px;padding:14px 30px;border-radius:14px;background:rgba(4,10,26,.62);font:600 38px/1.35 Int;text-align:center;white-space:nowrap}
+#cap span{transition:none}
+/* tracker */
+#trk{position:absolute;right:90px;top:62px;display:flex;gap:16px;align-items:center}
+.td{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 22px Jak;border:2.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.7)}
+#brand{position:absolute;left:90px;top:74px}
+/* syarat layout */
+.num{font-family:Jak;font-weight:800;font-size:250px;line-height:.8;position:absolute;left:140px;top:215px}
+.stitle{position:absolute;left:146px;top:560px;width:820px;font-size:80px}
+.skick{position:absolute;left:146px;top:200px}
+.badge{position:absolute;left:146px;top:150px;font:700 18px Jak;letter-spacing:.18em;padding:8px 16px;border-radius:30px;text-transform:uppercase}
+.bul{position:absolute;left:146px;width:840px;font:500 33px/1.3 Int;color:#E6EDF8;padding:12px 0 12px 26px}
+.bul:before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:5px;border-radius:3px;background:var(--c)}
+.panel{position:absolute;left:1050px;top:170px;width:740px;height:700px;border-radius:36px;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));border:1.5px solid rgba(255,255,255,.12);overflow:hidden}
+.panel svg{position:absolute;inset:0}
+.chip{position:absolute;padding:12px 24px;border-radius:40px;font:700 28px Jak;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);white-space:nowrap}
+.card{position:absolute;border-radius:24px;padding:26px 28px}
+.mini{position:absolute;width:210px;height:300px;border-radius:22px;display:flex;flex-direction:column;align-items:center;padding-top:30px;text-align:center;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.mini b{font:800 92px/1 Jak}
+.mini span{font:800 27px/1.18 Jak;margin-top:26px;padding:0 14px}
+.ar{font-family:Ami;font-weight:700;direction:rtl}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg"></div>
+  <div id="tint"></div>
+  <div id="pat"></div>
+  <div id="dust"></div>
+  <div id="vig"></div>
+
+  <!-- INTRO -->
+  <div class="scene" id="sc-intro">
+    <svg class="abs" width="1920" height="1080" style="left:0;top:0">
+      <defs>
+        <radialGradient id="sunG"><stop offset="0" stop-color="#FFF4C8"/><stop offset=".35" stop-color="#F2C230" stop-opacity=".9"/><stop offset="1" stop-color="#F2C230" stop-opacity="0"/></radialGradient>
+        <linearGradient id="plainG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2A3A66"/><stop offset="1" stop-color="#070F24"/></linearGradient>
+      </defs>
+      <circle id="isun" cx="960" cy="700" r="420" fill="url(#sunG)"/>
+      <rect x="0" y="700" width="1920" height="380" fill="url(#plainG)"/>
+      <line x1="0" y1="700" x2="1920" y2="700" stroke="#F2C230" stroke-opacity=".5" stroke-width="2"/>
+      <g id="crowd"></g>
+    </svg>
+    <div class="line h" id="i1" style="top:200px;font-size:72px">Setiap manusia pasti <span class="g">dibangkitkan</span> semula</div>
+    <div class="line h" id="i2" style="top:300px;font-size:72px">Setiap amalan akan <span class="g">dihisab</span></div>
+    <div class="line h" id="i3" style="top:200px;font-size:66px;color:#AFC0DE">Tertahan lama di Padang Mahsyar…</div>
+    <div class="line h" id="i4" style="top:300px;font-size:80px">…atau syurga <span class="g">tanpa hisab</span>?</div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="scene" id="sc-title">
+    <svg class="abs" id="tstar" width="560" height="560" style="left:680px;top:120px" viewBox="-280 -280 560 560">
+      <g fill="none" stroke="#F2C230" stroke-width="4">
+        <rect class="dr" x="-190" y="-190" width="380" height="380"/>
+        <rect class="dr" x="-190" y="-190" width="380" height="380" transform="rotate(45)"/>
+        <circle class="dr" r="232" stroke-opacity=".45" stroke-width="2"/>
+        <circle class="dr" r="160" stroke-opacity=".35" stroke-width="2"/>
+      </g>
+    </svg>
+    <div class="abs h g" id="t7" style="left:0;width:1920px;top:205px;text-align:center;font-size:330px;line-height:1">7</div>
+    <div class="abs ar g" id="tar" style="left:0;width:1920px;top:52px;text-align:center;font-size:64px">التوبة</div>
+    <div class="abs h" id="tt" style="left:0;width:1920px;top:700px;text-align:center;font-size:110px">Syarat Taubat</div>
+    <div class="abs" id="tk" style="left:0;width:1920px;top:840px;display:flex;justify-content:center"><div class="k" style="font-size:30px">Jalan Makrifat</div></div>
+  </div>
+
+  <!-- MAHSYAR -->
+  <div class="scene" id="sc-mahsyar">
+    <div class="k abs" style="left:150px;top:170px">Hari perhimpunan</div>
+    <svg class="abs" width="1920" height="1080" style="left:0;top:0">
+      <path id="mpA" class="dr" d="M520 540 C 760 540, 820 330, 1080 330" fill="none" stroke="#F2C230" stroke-width="6" stroke-linecap="round"/>
+      <path id="mpB" class="dr" d="M520 540 C 760 540, 820 735, 1080 735" fill="none" stroke="#8D9BB8" stroke-width="6" stroke-linecap="round" stroke-opacity=".75"/>
+      <g id="mnode" transform="translate(380 540)">
+        <circle r="140" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.35)" stroke-width="2.5"/>
+        <g id="mcrowd" fill="#CFD9EE"></g>
+      </g>
+    </svg>
+    <div class="abs h" id="mlab" style="left:230px;top:700px;width:300px;text-align:center;font-size:36px">Padang Mahsyar</div>
+    <div class="card" id="mcA" style="left:1080px;top:200px;width:700px;height:270px;background:linear-gradient(135deg,rgba(242,194,48,.22),rgba(242,194,48,.06));border:2px solid rgba(242,194,48,.7)">
+      <div class="h" style="font-size:46px;color:#FFE08A">Syurga tanpa hisab</div>
+      <div id="mcA0" style="font:500 22px Int;color:#F7E6B0;margin-top:6px;letter-spacing:.04em">bersama Rasulullah SAW</div>
+      <div id="mcA1" style="font:500 30px/1.3 Int;margin-top:18px">✓ Taubat sempurna sebelum meninggal dunia</div>
+      <div id="mcA2" style="font:500 30px/1.3 Int;margin-top:8px">✓ Selesai hutang dengan Allah &amp; makhluk</div>
+    </div>
+    <div class="card" id="mcB" style="left:1080px;top:610px;width:700px;height:250px;background:rgba(125,139,168,.14);border:2px solid rgba(150,165,195,.5)">
+      <div class="h" style="font-size:46px;color:#C9D3E8">Tertahan · hisab lama</div>
+      <div id="mcB1" style="font:500 30px/1.3 Int;margin-top:18px;color:#D5DDEC">• Dosa yang belum ditaubati</div>
+      <div id="mcB2" style="font:500 30px/1.3 Int;margin-top:8px;color:#D5DDEC">• Taubat tidak cukup syarat</div>
+    </div>
+  </div>
+
+  <!-- TIGA + EMPAT -->
+  <div class="scene" id="sc-tiga">
+    <div id="tgcards"></div>
+    <div class="abs" id="brA" style="left:150px;top:690px;width:670px;height:60px;border:3px solid #7FC0D0;border-top:none;border-radius:0 0 18px 18px"></div>
+    <div class="abs h" id="brAl" style="left:150px;top:770px;width:670px;text-align:center;font-size:34px;color:#A9DCE8">Orang awam · 3 syarat</div>
+    <div class="abs" id="brB" style="left:840px;top:690px;width:930px;height:60px;border:3px solid #F2C230;border-top:none;border-radius:0 0 18px 18px"></div>
+    <div class="abs h" id="brBl" style="left:840px;top:770px;width:930px;text-align:center;font-size:34px;color:#FFE08A">+ 4 syarat tambahan jalan makrifat</div>
+    <div class="abs h" id="tgtop" style="left:0;width:1920px;top:180px;text-align:center;font-size:54px">Kembali kepada Allah dalam keadaan <span class="g">benar-benar bersih</span></div>
+  </div>
+
+  <!-- SYARAT 1..7 are built in JS -->
+  <div id="syarat"></div>
+
+  <!-- GELINCIR -->
+  <div class="scene" id="sc-gelincir">
+    <div class="k abs" style="left:150px;top:170px">Bila tergelincir</div>
+    <div class="abs h" id="gq" style="left:150px;top:220px;font-size:76px;width:900px">Sudah bertaubat, tetapi <span class="g">tergelincir</span> semula?</div>
+    <svg class="abs" width="1920" height="1080" style="left:0;top:0">
+      <path id="gpath" d="M160 830 C 380 800, 520 700, 700 640 C 800 610, 840 600, 880 690 C 910 760, 960 790, 1010 760 C 1150 680, 1400 520, 1780 380" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round"/>
+      <circle id="gdip" cx="985" cy="785" r="0" fill="#E07A6A"/>
+      <circle id="gre" cx="1010" cy="760" r="0" fill="none" stroke="#F2C230" stroke-width="5"/>
+      <circle id="ghead" r="14" fill="#FFF1C2"/>
+    </svg>
+    <div class="abs chip" id="gc1" style="left:1180px;top:255px;font-size:34px;border-color:#7FD1A8;background:rgba(127,209,168,.14)">✓ Dosa lama tetap diampuni</div>
+    <div class="abs chip" id="gc2" style="left:1180px;top:355px;font-size:34px;border-color:#F2C230;background:rgba(242,194,48,.14)">↻ Taubat semula atas dosa baharu</div>
+  </div>
+
+  <!-- ILMU -->
+  <div class="scene" id="sc-ilmu">
+    <div class="k abs" style="left:150px;top:170px">Ilmu &amp; panduan</div>
+    <div class="abs h" id="lq" style="left:150px;top:220px;font-size:66px;width:760px">Tuntut ilmu <span class="g">fardu ain</span> supaya taubat &amp; ibadat sah</div>
+    <svg class="abs" width="760" height="480" style="left:170px;top:470px" viewBox="0 0 760 480">
+      <g id="lrays" stroke="#F2C230" stroke-width="3" stroke-linecap="round"></g>
+      <g fill="none" stroke="#EAF0FA" stroke-width="5" stroke-linejoin="round">
+        <path class="dr" d="M380 400 C 300 360, 190 350, 100 370 L 100 180 C 190 160, 300 170, 380 210 Z"/>
+        <path class="dr" d="M380 400 C 460 360, 570 350, 660 370 L 660 180 C 570 160, 460 170, 380 210 Z"/>
+        <path class="dr" d="M380 210 L 380 400"/>
+        <path class="dr" d="M150 230 C 220 215, 290 220, 340 245 M150 280 C 220 265, 290 270, 340 295 M150 330 C 220 315, 290 320, 340 345" stroke-width="3" stroke-opacity=".6"/>
+        <path class="dr" d="M610 230 C 540 215, 470 220, 420 245 M610 280 C 540 265, 470 270, 420 295 M610 330 C 540 315, 470 320, 420 345" stroke-width="3" stroke-opacity=".6"/>
+      </g>
+    </svg>
+    <div id="ltiers"></div>
+  </div>
+
+  <!-- DOA / END -->
+  <div class="scene" id="sc-doa">
+    <svg class="abs" width="1920" height="1080" style="left:0;top:0"><g id="dring"></g></svg>
+    <div class="abs h" id="d1" style="left:0;width:1920px;top:250px;text-align:center;font-size:62px;color:#DDE6F6">Semoga Allah menerima taubat kita</div>
+    <div class="abs h" id="d2" style="left:0;width:1920px;top:430px;text-align:center;font-size:104px">Bersihkan diri<br><span class="g">sebelum dihisab.</span></div>
+    <div id="endcard" class="abs" style="left:0;top:0;width:1920px;height:1080px">
+      <div class="abs h" style="left:0;width:1920px;top:150px;text-align:center;font-size:64px">7 Syarat Taubat <span class="g">Jalan Makrifat</span></div>
+      <div id="endrow"></div>
+      <div class="abs" id="endnote" style="left:0;width:1920px;top:860px;text-align:center;font:500 26px/1.5 Int;color:#9FB0CF">Video ini meringkaskan nota kuliah yang dikongsi. Untuk perincian hukum,<br>rujuk guru atau ustaz yang bertauliah.</div>
+    </div>
+  </div>
+
+  <div id="brand"><div class="k">7 Syarat Taubat · Jalan Makrifat</div></div>
+  <div id="trk"></div>
+  <div id="cap"></div>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const P = (t, a, b) => clamp((t - a) / (b - a));
+const eo = (x) => 1 - Math.pow(1 - x, 3);
+const eio = (x) => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eback = (x) => { const c = 1.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const lerp = (a, b, x) => a + (b - a) * x;
+function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+
+let TL, SC = {};
+// cue(id, token, nth): absolute time of the nth word starting with token
+function cue(id, tok, nth = 0) {
+  const ws = SC[id].words; tok = tok.toLowerCase(); let n = 0;
+  for (const w of ws) { const x = w.w.toLowerCase().replace(/[^a-z\-]/g, ''); if (x.startsWith(tok)) { if (n === nth) return w.s; n++; } }
+  console.warn('cue missing', id, tok, nth); return SC[id].vo;
+}
+// reveal element: fade + rise starting at time a
+function rv(el, t, a, dur = .55, dy = 28) {
+  const p = eo(P(t, a, a + dur)); el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * dy}px)`; return p;
+}
+function drawPaths(root, p) { root.querySelectorAll('.dr').forEach((el, i, arr) => {
+  const L = el._L || (el._L = el.getTotalLength ? el.getTotalLength() : 1000);
+  const n = arr.length, q = clamp(p * (1 + .35 * (n - 1)) - .35 * i);
+  el.style.strokeDasharray = `${L} ${L}`; el.style.strokeDashoffset = L * (1 - eio(q)); }); }
+
+const SY = [
+  { id: 's1', n: 1, c: '#2F63C0', c2: '#5B8DE8', title: 'Berhenti Melakukan Dosa', ord: 'pertama',
+    bul: [['Serta-merta', 'serta'], ['Secara menyeluruh', 'secara']] },
+  { id: 's2', n: 2, c: '#1F9A9A', c2: '#3FC4C0', title: 'Menyesali Kesalahan', ord: 'kedua',
+    bul: [['Penyesalan yang mendalam', 'rasa'], ['Atas dosa yang telah dilakukan', 'atas']] },
+  { id: 's3', n: 3, c: '#6FB6C8', c2: '#A9DCE8', title: 'Berjanji Tidak Mengulangi', ord: 'ketiga',
+    bul: [['Bersumpah &amp; berazam teguh', 'bersumpah'], ['Tidak kembali kepada dosa itu', 'untuk']] },
+  { id: 's4', n: 4, c: '#1FA2E0', c2: '#5CC4F2', title: 'Menggantikan Hak Allah', ord: 'keempat',
+    bul: [['Qada solat, puasa &amp; zakat yang ditinggalkan', 'wajib'], ['Sengaja atau tidak — termasuk awal baligh', 'sama'],
+          ['Dikira &amp; dicatat tarikh demi tarikh', 'qada'], ['Berniat &amp; mula qada, lalu meninggal: diampunkan', 'jika']] },
+  { id: 's5', n: 5, c: '#2D7FC9', c2: '#F2C230', title: 'Menunaikan Hak Makhluk', ord: 'kelima',
+    bul: [['Harta &amp; wang: pulangkan atau mohon halal', 'harta'], ['Walau sedikit, walau sejengkal tanah', 'walaupun'],
+          ['Mengumpat: taubat, doakan &amp; hadiahkan pahala', 'bagi'], ['Fitnah terbuka: wajib diakui &amp; dibetulkan', 'namun']] },
+  { id: 's6', n: 6, c: '#F5C430', c2: '#FFE07A', title: 'Taubat Sebelum Tiba Masa', ord: 'keenam',
+    bul: [['Sebelum nyawa sampai ke halkum', 'sebelum'], ['Sebelum matahari terbit dari barat', 'sebelum', 1], ['Taubat Firaun saat lemas: tidak diterima', 'taubat']] },
+  { id: 's7', n: 7, c: '#C9A24A', c2: '#F0D27A', title: 'Ikhlas Kerana Allah', ord: 'ketujuh',
+    bul: [['✕ Bukan kerana manusia', 'bersyaratkan'], ['✕ Bukan kerana habuan dunia', 'kerana'], ['✕ Bukan kerana sudah tidak mampu bermaksiat', 'hanya']] },
+];
+
+const ICON = {
+s1: `<g transform="translate(370 350)" fill="none" stroke="#EAF0FA" stroke-width="14" stroke-linecap="round">
+  <g id="c1L"><rect x="-300" y="-45" width="170" height="90" rx="45"/><rect x="-185" y="-45" width="150" height="90" rx="45" /></g>
+  <g id="c1ML"><path d="M-20 -45 L -60 -45 A45 45 0 0 0 -60 45 L -20 45"/></g>
+  <g id="c1MR"><path d="M20 -45 L 60 -45 A45 45 0 0 1 60 45 L 20 45"/></g>
+  <g id="c1R"><rect x="35" y="-45" width="150" height="90" rx="45"/><rect x="130" y="-45" width="170" height="90" rx="45"/></g>
+  <g id="c1spark" stroke="#F2C230" stroke-width="7"></g>
+</g>
+<g transform="translate(370 560)"><text id="c1t" text-anchor="middle" font-family="Jak" font-weight="800" font-size="58" fill="#F2C230" letter-spacing="8">STOP</text></g>`,
+s2: `<g transform="translate(370 380)">
+  <path class="dr" d="M0 150 C -60 100, -200 20, -200 -70 C -200 -150, -110 -190, -50 -150 C -25 -133, -8 -110, 0 -90 C 8 -110, 25 -133, 50 -150 C 110 -190, 200 -150, 200 -70 C 200 20, 60 100, 0 150 Z" fill="none" stroke="#EAF0FA" stroke-width="12" stroke-linejoin="round"/>
+  <path id="c2fill" d="M0 150 C -60 100, -200 20, -200 -70 C -200 -150, -110 -190, -50 -150 C -25 -133, -8 -110, 0 -90 C 8 -110, 25 -133, 50 -150 C 110 -190, 200 -150, 200 -70 C 200 20, 60 100, 0 150 Z" fill="#3FC4C0" opacity="0"/>
+  <path id="c2drop" d="M0 -60 C 18 -30, 30 -12, 30 4 A30 30 0 0 1 -30 4 C -30 -12, -18 -30, 0 -60 Z" fill="#9FE6F2"/>
+  <ellipse id="c2rip" cx="0" cy="0" rx="10" ry="4" fill="none" stroke="#9FE6F2" stroke-width="4"/>
+</g>`,
+s3: `<g transform="translate(370 350)">
+  <path class="dr" d="M 150 0 A150 150 0 1 1 106 -106" fill="none" stroke="#EAF0FA" stroke-width="16" stroke-linecap="round"/>
+  <path class="dr" d="M 70 -120 L 112 -110 L 106 -66" fill="none" stroke="#EAF0FA" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="dr" r="225" fill="none" stroke="#E86A5A" stroke-width="16"/>
+  <path class="dr" d="M -159 159 L 159 -159" stroke="#E86A5A" stroke-width="16" stroke-linecap="round"/>
+</g>
+<text id="c3t" x="370" y="660" text-anchor="middle" font-family="Jak" font-weight="800" font-size="40" fill="#A9DCE8" letter-spacing="6">SUMPAH · AZAM</text>`,
+s4: `<g id="c4chips"></g><g id="c4cal" transform="translate(110 230)"></g>
+<text id="c4cnt" x="370" y="665" text-anchor="middle" font-family="Jak" font-weight="800" font-size="36" fill="#9EDCF8"></text>`,
+s5: `<g id="c5A">
+  <g fill="#EAF0FA"><circle cx="150" cy="300" r="52"/><path d="M60 470 C 60 380, 240 380, 240 470 Z"/><circle cx="590" cy="300" r="52"/><path d="M500 470 C 500 380, 680 380, 680 470 Z"/></g>
+  <path id="c5arc" d="M200 260 C 300 120, 440 120, 540 260" fill="none" stroke="#F2C230" stroke-width="4" stroke-dasharray="6 12" opacity=".7"/>
+  <g id="c5coin"><circle r="40" fill="#F2C230"/><circle r="28" fill="none" stroke="#B88A10" stroke-width="5"/><text y="12" text-anchor="middle" font-family="Jak" font-weight="800" font-size="32" fill="#7A5A00">RM</text></g>
+  <g id="c5land" transform="translate(370 560)"><path d="M-120 20 L -60 -30 L 120 -30 L 60 20 Z" fill="#6A8F4E" stroke="#B6D69A" stroke-width="3"/><text y="70" text-anchor="middle" font-family="Int" font-weight="600" font-size="26" fill="#CFE3BF">sejengkal tanah</text></g>
+  <g id="c5bub" transform="translate(250 175)"><path d="M-70 -45 H70 A20 20 0 0 1 90 -25 V25 A20 20 0 0 1 70 45 H-10 L-40 75 L-35 45 H-70 A20 20 0 0 1 -90 25 V-25 A20 20 0 0 1 -70 -45Z" fill="rgba(232,106,90,.25)" stroke="#E86A5A" stroke-width="4"/><text y="12" text-anchor="middle" font-family="Jak" font-weight="800" font-size="34" fill="#F3B0A6">umpat</text></g>
+  <g id="c5heart"><path d="M0 30 C -12 20, -40 4, -40 -14 C -40 -30, -22 -38, -10 -30 C -5 -27, -2 -22, 0 -18 C 2 -22, 5 -27, 10 -30 C 22 -38, 40 -30, 40 -14 C 40 4, 12 20, 0 30 Z" fill="#F2C230"/></g>
+  <g id="c5fit" transform="translate(370 150)"><rect x="-150" y="-50" width="300" height="100" rx="14" fill="rgba(255,255,255,.08)" stroke="#EAF0FA" stroke-width="3"/><text y="14" text-anchor="middle" font-family="Jak" font-weight="800" font-size="40" fill="#EAF0FA">FITNAH</text>
+   <g id="c5stamp" transform="rotate(-10)"><rect x="-165" y="-38" width="330" height="76" rx="10" fill="none" stroke="#7FD1A8" stroke-width="6"/><text y="14" text-anchor="middle" font-family="Jak" font-weight="800" font-size="36" fill="#7FD1A8">DIBETULKAN</text></g></g>
+</g>`,
+s6: `<g>
+  <rect x="0" y="470" width="740" height="230" fill="rgba(10,20,45,.6)"/>
+  <g id="c6sun"><circle r="80" fill="#FFD25A"/><circle r="120" fill="#FFD25A" opacity=".18"/></g>
+  <rect x="0" y="470" width="740" height="230" fill="#0B1838"/>
+  <line x1="0" y1="470" x2="740" y2="470" stroke="#F5C430" stroke-width="3" opacity=".7"/>
+  <text x="70" y="525" font-family="Jak" font-weight="800" font-size="30" fill="#FFE07A" letter-spacing="5">BARAT</text>
+  <text x="670" y="525" text-anchor="end" font-family="Jak" font-weight="800" font-size="30" fill="#5E6E92" letter-spacing="5">TIMUR</text>
+  <g transform="translate(470 330)">
+    <path d="M-80 -150 H80 M-80 150 H80" stroke="#EAF0FA" stroke-width="12" stroke-linecap="round"/>
+    <path d="M-64 -150 C -64 -60, -10 -30, -10 0 C -10 30, -64 60, -64 150 M64 -150 C 64 -60, 10 -30, 10 0 C 10 30, 64 60, 64 150" fill="none" stroke="#EAF0FA" stroke-width="8"/>
+    <clipPath id="hgTop"><path d="M-60 -146 C -60 -60, -8 -30, -8 0 L 8 0 C 8 -30, 60 -60, 60 -146 Z"/></clipPath>
+    <clipPath id="hgBot"><path d="M-60 146 C -60 60, -8 30, -8 0 L 8 0 C 8 30, 60 60, 60 146 Z"/></clipPath>
+    <rect id="c6top" clip-path="url(#hgTop)" x="-70" y="-150" width="140" height="150" fill="#F5C430"/>
+    <rect id="c6bot" clip-path="url(#hgBot)" x="-70" y="0" width="140" height="150" fill="#F5C430"/>
+    <line id="c6stream" x1="0" y1="0" x2="0" y2="140" stroke="#F5C430" stroke-width="4"/>
+  </g>
+</g>`,
+s7: `<g transform="translate(370 400)">
+  <g id="c7rays" stroke="#F0D27A" stroke-width="8" stroke-linecap="round"></g>
+  <path id="c7heart" d="M0 150 C -60 100, -200 20, -200 -70 C -200 -150, -110 -190, -50 -150 C -25 -133, -8 -110, 0 -90 C 8 -110, 25 -133, 50 -150 C 110 -190, 200 -150, 200 -70 C 200 20, 60 100, 0 150 Z" fill="#F7F0DC" transform="scale(.62)"/>
+</g>
+<text id="c7ar" x="370" y="210" text-anchor="middle" font-family="Ami" font-weight="700" font-size="150" fill="#F0D27A" direction="rtl">الله</text>`,
+};
+
+function build() {
+  // background pattern: 8-point star tile
+  const star = `<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><g fill='none' stroke='%23F2C230' stroke-width='1.6'><rect x='45' y='45' width='60' height='60'/><rect x='45' y='45' width='60' height='60' transform='rotate(45 75 75)'/><circle cx='75' cy='75' r='18'/><path d='M0 0 L30 30 M150 0 L120 30 M0 150 L30 120 M150 150 L120 120'/></g></svg>`;
+  $('#pat').style.backgroundImage = `url("data:image/svg+xml;utf8,${star}")`;
+  // dust
+  const r = rng(7), d = $('#dust'); window.DUST = [];
+  for (let i = 0; i < 70; i++) { const e = document.createElement('div'); e.className = 'dust'; const s = 1.5 + r() * 3.5;
+    e.style.width = e.style.height = s + 'px'; d.appendChild(e); DUST.push({ e, x: r() * 1920, y: r() * 1080, v: 6 + r() * 16, ph: r() * 6.28, a: .15 + r() * .5 }); }
+  // intro crowd: rows of small figures in perspective
+  const cr = $('#crowd'), r2 = rng(3); let h = '';
+  for (let row = 0; row < 9; row++) { const y = 712 + Math.pow(row, 1.55) * 12, sc = .25 + row * .16, gap = 26 * sc + 8;
+    for (let x = -20; x < 1940; x += gap * (2.2 + r2() * 2.4)) { if (r2() < .3) continue; const xx = x + r2() * gap, op = .12 + row * .045 + r2() * .1;
+      h += `<g transform="translate(${xx.toFixed(1)} ${y.toFixed(1)}) scale(${sc.toFixed(2)})" opacity="${op.toFixed(2)}"><circle cy="-34" r="8" fill="#9FB0D4"/><path d="M-11 0 C -11 -20, 11 -20, 11 0 Z" fill="#9FB0D4" transform="translate(0 -4) scale(1 1.3)"/></g>`; } }
+  cr.innerHTML = h;
+  // mahsyar node crowd
+  let m = ''; const r3 = rng(11);
+  for (let i = 0; i < 46; i++) { const a = r3() * 6.28, rr = Math.sqrt(r3()) * 105; m += `<circle cx="${(Math.cos(a) * rr).toFixed(1)}" cy="${(Math.sin(a) * rr).toFixed(1)}" r="${(5 + r3() * 4).toFixed(1)}" opacity="${(.4 + r3() * .6).toFixed(2)}"/>`; }
+  $('#mcrowd').innerHTML = m;
+  // tiga cards
+  let tc = '';
+  SY.forEach((s, i) => { const x = 150 + i * 230 + (i >= 3 ? 20 : 0), dark = (i === 2 || i === 5);
+    tc += `<div class="mini" id="mini${i}" style="left:${x}px;top:340px;background:${s.c};color:${dark ? '#0B1838' : '#fff'};${i >= 3 ? 'border:3px solid #F2C230' : ''}"><b>${s.n}</b><span>${s.title}</span></div>`; });
+  $('#tgcards').innerHTML = tc;
+  // syarat scenes
+  let sh = '';
+  SY.forEach((s, i) => { const dark = (s.id === 's3' || s.id === 's6');
+    sh += `<div class="scene" id="sc-${s.id}" style="--c:${s.c2}">
+      <div class="badge" style="background:${i < 3 ? 'rgba(127,192,208,.16)' : 'rgba(242,194,48,.16)'};color:${i < 3 ? '#A9DCE8' : '#FFE08A'};border:1.5px solid ${i < 3 ? 'rgba(127,192,208,.5)' : 'rgba(242,194,48,.55)'}">${i < 3 ? 'Syarat asas' : 'Tambahan jalan makrifat'}</div>
+      <div class="num" style="color:${s.c2}">${s.n}</div>
+      <div class="k skick" style="left:${s.n === 1 ? 300 : 325}px;top:262px;color:${s.c2}">Syarat ${s.ord}</div>
+      <div class="h stitle" style="top:${s.bul.length > 3 ? 430 : 470}px;font-size:${s.bul.length > 3 ? 74 : 80}px">${s.title.split(' ').map((w) => `<span class="word">${w}</span>`).join(' ')}</div>
+      ${s.bul.map((b, j) => `<div class="bul" style="top:${(s.bul.length > 3 ? 620 : 660) + (s.title.length > 22 ? 0 : 0) + j * 72}px">${b[0]}</div>`).join('')}
+      <div class="panel" style="box-shadow:0 0 120px ${s.c}33"><svg width="740" height="700" viewBox="0 0 740 700">${ICON[s.id]}</svg></div>
+    </div>`; });
+  $('#syarat').innerHTML = sh;
+  // title overflow: long titles -> 2 lines; adjust bullets below title height
+  SY.forEach((s) => { const sc = $('#sc-' + s.id), ti = sc.querySelector('.stitle'); const hgt = ti.offsetHeight; const top = ti.offsetTop + hgt + 26;
+    sc.querySelectorAll('.bul').forEach((b, j) => { b.style.top = (top + j * (s.bul.length > 3 ? 62 : 74)) + 'px'; if (s.bul.length > 3) b.style.fontSize = '30px'; }); });
+  // s1 spark
+  let sp = ''; for (let i = 0; i < 10; i++) { const a = i / 10 * 6.28; sp += `<line x1="${Math.cos(a) * 30}" y1="${Math.sin(a) * 30}" x2="${Math.cos(a) * 70}" y2="${Math.sin(a) * 70}"/>`; }
+  document.querySelector('#c1spark').innerHTML = sp;
+  // s4 chips + calendar
+  $('#c4chips').innerHTML = ['Solat', 'Puasa', 'Zakat'].map((w, i) => `<g id="c4c${i}" transform="translate(${150 + i * 220} 120)"><rect x="-90" y="-36" width="180" height="72" rx="36" fill="rgba(31,162,224,.22)" stroke="#5CC4F2" stroke-width="3"/><text y="12" text-anchor="middle" font-family="Jak" font-weight="800" font-size="32" fill="#EAF0FA">${w}</text></g>`).join('');
+  let cal = `<rect x="0" y="0" width="520" height="380" rx="20" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.3)" stroke-width="3"/><rect x="0" y="0" width="520" height="56" rx="20" fill="#1FA2E0"/><text x="260" y="38" text-anchor="middle" font-family="Jak" font-weight="800" font-size="26" fill="#fff" letter-spacing="4">CATATAN QADA</text>`;
+  for (let i = 0; i < 28; i++) { const cx = 37 + (i % 7) * 74, cy = 100 + Math.floor(i / 7) * 74;
+    cal += `<g transform="translate(${cx} ${cy})"><rect x="-28" y="-28" width="56" height="56" rx="10" fill="rgba(255,255,255,.05)"/><text y="9" text-anchor="middle" font-family="Int" font-weight="500" font-size="22" fill="#8FA2C6">${i + 1}</text><path class="tick" id="tk${i}" d="M-16 2 L -4 14 L 18 -12" fill="none" stroke="#7FE0A8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="60" stroke-dashoffset="60"/></g>`; }
+  $('#c4cal').innerHTML = cal;
+  // s7 rays
+  let ry = ''; for (let i = 0; i < 12; i++) { const a = i / 12 * 6.28; ry += `<line x1="${Math.cos(a) * 165}" y1="${Math.sin(a) * 165 - 10}" x2="${Math.cos(a) * 215}" y2="${Math.sin(a) * 215 - 10}"/>`; }
+  $('#c7rays').innerHTML = ry;
+  // ilmu rays + tiers
+  let lr = ''; for (let i = 0; i < 9; i++) { const a = -Math.PI / 2 + (i - 4) * .26; lr += `<line x1="${380 + Math.cos(a) * 80}" y1="${200 + Math.sin(a) * 80}" x2="${380 + Math.cos(a) * 170}" y2="${200 + Math.sin(a) * 170}"/>`; }
+  $('#lrays').innerHTML = lr;
+  $('#ltiers').innerHTML = [['Allah SWT', 'Petunjuk', '#F2C230'], ['Rasulullah SAW', 'Sunnah', '#F0D27A'], ['Ulama', 'Pewaris Nabi', '#9EDCF8']].map((x, i) =>
+    `<div class="card" id="lt${i}" style="left:1120px;top:${250 + i * 200}px;width:640px;height:150px;background:rgba(255,255,255,.06);border:2px solid ${x[2]}88;display:flex;align-items:center;gap:28px">
+     <div style="width:70px;height:70px;border-radius:50%;background:${x[2]};color:#0B1838;font:800 34px Jak;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+     <div><div class="h" style="font-size:44px">${x[0]}</div><div style="font:600 24px Int;color:${x[2]};letter-spacing:.12em;text-transform:uppercase;margin-top:4px">${x[1]}</div></div></div>`).join('');
+  // doa ring + endcard row
+  let dr = ''; for (let i = 0; i < 7; i++) dr += `<circle id="dr${i}" r="18" fill="${SY[i].c2}"/>`;
+  $('#dring').innerHTML = dr;
+  $('#endrow').innerHTML = SY.map((s, i) => { const dark = (i === 2 || i === 5);
+    return `<div class="mini" id="em${i}" style="left:${150 + i * 236}px;top:330px;width:206px;height:270px;background:${s.c};color:${dark ? '#0B1838' : '#fff'}"><b style="font-size:80px">${s.n}</b><span style="font-size:25px">${s.title}</span></div>`; }).join('');
+  // tracker
+  $('#trk').innerHTML = SY.map((s, i) => `<div class="td" id="td${i}">${s.n}</div>`).join('');
+  // captions: chunk words
+  window.CAPS = [];
+  TL.scenes.forEach((sc) => { let cur = [];
+    sc.words.forEach((w, i) => { cur.push(w); const end = /[,.?!]$/.test(w.w) || i === sc.words.length - 1;
+      const len = cur.reduce((a, x) => a + x.w.length + 1, 0);
+      if ((end && len > 18) || len > 52 || i === sc.words.length - 1) { CAPS.push(cur); cur = []; } });
+    if (cur.length) CAPS.push(cur); });
+}
+
+function fadeScene(id, t, fin = .5, fout = .5) {
+  const s = SC[id], el = $('#sc-' + id);
+  const o = Math.min(P(t, s.start, s.start + fin), 1 - P(t, s.end - fout, s.end));
+  el.style.opacity = o; el.style.display = o <= 0 ? 'none' : 'block'; return o > 0;
+}
+
+let capIdx = -1;
+function renderCaps(t) {
+  const cap = $('#cap'); let k = -1;
+  for (let i = 0; i < CAPS.length; i++) { const a = CAPS[i][0].s - .15, nx = CAPS[i + 1] ? CAPS[i + 1][0].s - .15 : 1e9, last = CAPS[i][CAPS[i].length - 1].e + .6;
+    if (t >= a && t < Math.min(nx, last)) { k = i; break; } }
+  if (k < 0) { cap.style.opacity = 0; return; }
+  if (k !== capIdx) { cap.innerHTML = CAPS[k].map((w) => `<span>${w.w}</span>`).join(' '); capIdx = k; }
+  cap.style.opacity = 1;
+  cap.querySelectorAll('span').forEach((sp, i) => { const w = CAPS[k][i];
+    sp.style.color = t >= w.s ? (t < w.e + .05 ? '#F2C230' : '#FFFFFF') : 'rgba(255,255,255,.5)'; });
+}
+
+window.render = async function (t) {
+  // background
+  $('#pat').style.transform = `translate(${(t * 6) % 150}px, ${(t * 3) % 150}px)`;
+  DUST.forEach((d) => { const y = ((d.y - t * d.v) % 1080 + 1080) % 1080, x = d.x + Math.sin(t * .4 + d.ph) * 20;
+    d.e.style.transform = `translate(${x}px, ${y}px)`; d.e.style.opacity = d.a * (.6 + .4 * Math.sin(t * 1.3 + d.ph)); });
+  // tint toward current syarat colour
+  let tint = 'transparent', ti = 0;
+  SY.forEach((s) => { const sc = SC[s.id]; const o = Math.min(P(t, sc.start, sc.start + .8), 1 - P(t, sc.end - .8, sc.end)); if (o > 0) { tint = s.c; ti = o; } });
+  $('#tint').style.background = `radial-gradient(ellipse 60% 70% at 75% 50%, ${tint}, transparent 70%)`; $('#tint').style.opacity = .35 * ti;
+
+  // brand kicker + tracker
+  const bo = Math.min(P(t, SC.mahsyar.start, SC.mahsyar.start + .8), 1 - P(t, SC.doa.end - 8.5, SC.doa.end - 7.8));
+  $('#brand').style.opacity = bo;
+  const to = Math.min(P(t, SC.s1.start, SC.s1.start + .8), 1 - P(t, SC.s7.end - .6, SC.s7.end));
+  $('#trk').style.opacity = to; $('#trk').style.transform = `translateY(${(1 - eo(to)) * -20}px)`;
+  SY.forEach((s, i) => { const el = $('#td' + i), sc = SC[s.id], active = t >= sc.start + .3 && t < sc.end - .3, done = t >= sc.end - .3;
+    const pulse = active ? eback(P(t, sc.start + .3, sc.start + .9)) : 0;
+    el.style.background = (active || done) ? s.c : 'transparent';
+    el.style.borderColor = active ? '#fff' : (done ? s.c : 'rgba(255,255,255,.35)');
+    el.style.color = (active || done) ? ((i === 2 || i === 5) ? '#0B1838' : '#fff') : 'rgba(255,255,255,.7)';
+    el.style.transform = `scale(${1 + .28 * pulse})`; el.style.boxShadow = active ? `0 0 26px ${s.c}` : 'none'; });
+
+  // INTRO
+  if (fadeScene('intro', t, 1.0)) { const s = SC.intro;
+    const z = 1 + .06 * P(t, s.start, s.end);
+    $('#crowd').setAttribute('transform', `translate(960 700) scale(${z}) translate(-960 -700)`);
+    $('#crowd').style.opacity = eo(P(t, .3, 2.5));
+    $('#isun').setAttribute('r', 380 + 60 * eo(P(t, 0, 6)) + 10 * Math.sin(t * 1.5));
+    $('#isun').setAttribute('cy', 760 - 80 * eo(P(t, 0, 6)));
+    const q = cue('intro', 'persoalannya');
+    [['#i1', cue('intro', 'setiap')], ['#i2', cue('intro', 'setiap', 1)]].forEach(([id, a]) => { const p = rv($(id), t, a - .1); $(id).style.opacity = p * (1 - P(t, q - .2, q + .3)); });
+    rv($('#i3'), t, cue('intro', 'adakah') - .1); rv($('#i4'), t, cue('intro', 'atau') - .1, .6, 40);
+  }
+  // TITLE
+  if (fadeScene('title', t, .6, .6)) { const s = SC.title;
+    drawPaths($('#tstar'), P(t, s.start, s.start + 2.2));
+    $('#tstar').style.transform = `rotate(${(t - s.start) * 6}deg) scale(${.85 + .15 * eo(P(t, s.start, s.start + 1.5))})`;
+    const p7 = eback(P(t, s.start + .4, s.start + 1.2)); $('#t7').style.opacity = clamp(p7); $('#t7').style.transform = `scale(${.4 + .6 * p7})`;
+    rv($('#tar'), t, s.start + .6); rv($('#tt'), t, cue('title', 'syarat') - .1, .6, 40); rv($('#tk'), t, cue('title', 'jalan') - .1);
+  }
+  // MAHSYAR
+  if (fadeScene('mahsyar', t)) { const s = SC.mahsyar;
+    $('#mnode').setAttribute('transform', `translate(380 540) scale(${.7 + .3 * eback(P(t, s.start, s.start + .9))})`);
+    rv($('#mlab'), t, s.start + .3);
+    const a = cue('mahsyar', 'golongan'), b = cue('mahsyar', 'sebaliknya');
+    const pa = $('#mpA'), pb = $('#mpB'); const La = pa._L || (pa._L = pa.getTotalLength()); const Lb = pb._L || (pb._L = pb.getTotalLength());
+    pa.style.strokeDasharray = `${La} ${La}`; pa.style.strokeDashoffset = La * (1 - eio(P(t, a, a + 1.4)));
+    pb.style.strokeDasharray = `${Lb} ${Lb}`; pb.style.strokeDashoffset = Lb * (1 - eio(P(t, b, b + 1.4)));
+    rv($('#mcA'), t, a + .9, .6, 0); $('#mcA').style.transform = `scale(${.94 + .06 * eo(P(t, a + .9, a + 1.5))})`;
+    rv($('#mcA0'), t, cue('mahsyar', 'bersama'), .4, 10); rv($('#mcA1'), t, cue('mahsyar', 'bertaubat'), .5, 14); rv($('#mcA2'), t, cue('mahsyar', 'menyelesaikan'), .5, 14);
+    rv($('#mcB'), t, b + .9, .6, 0); rv($('#mcB1'), t, cue('mahsyar', 'dosa'), .5, 14); rv($('#mcB2'), t, cue('mahsyar', 'taubatnya'), .5, 14);
+    const hl = P(t, cue('mahsyar', 'tertahan') - .1, cue('mahsyar', 'tertahan') + .5); $('#mcB').style.boxShadow = `0 0 ${40 * hl}px rgba(232,106,90,${.5 * hl})`;
+  }
+  // TIGA
+  if (fadeScene('tiga', t)) { const s = SC.tiga;
+    const a = cue('tiga', 'orang'), b = cue('tiga', 'empat'), c = cue('tiga', 'benar-benar') ;
+    for (let i = 0; i < 7; i++) { const el = $('#mini' + i), st = i < 3 ? a + i * .25 : b + (i - 3) * .22, p = eback(P(t, st, st + .6));
+      el.style.opacity = clamp(P(t, st, st + .25)); el.style.transform = i < 3 ? `translateY(${(1 - p) * 80}px)` : `translateX(${(1 - p) * 300}px) rotate(${(1 - p) * 8}deg)`;
+      const gl = P(t, c - .1 + i * .06, c + .4 + i * .06); el.style.boxShadow = `0 18px 40px rgba(0,0,0,.35), 0 0 ${50 * gl}px rgba(242,194,48,${.55 * gl})`; }
+    const pa = eo(P(t, a + .6, a + 1.2)); $('#brA').style.opacity = pa; $('#brA').style.transform = `scaleX(${pa})`; rv($('#brAl'), t, a + .9);
+    const pb = eo(P(t, b + .9, b + 1.5)); $('#brB').style.opacity = pb; $('#brB').style.transform = `scaleX(${pb})`; rv($('#brBl'), t, b + 1.1);
+    rv($('#tgtop'), t, cue('tiga', 'kembali') - .1);
+  }
+  // SYARAT
+  SY.forEach((sy) => { if (!fadeScene(sy.id, t)) return; const s = SC[sy.id], sc = $('#sc-' + sy.id), t0 = s.start;
+    const pn = eback(P(t, t0 + .1, t0 + .9)); const num = sc.querySelector('.num'); num.style.opacity = clamp(P(t, t0 + .1, t0 + .4)); num.style.transform = `translateY(${(1 - pn) * 60}px) scale(${.7 + .3 * pn})`;
+    rv(sc.querySelector('.badge'), t, t0 + .2, .5, 12); rv(sc.querySelector('.skick'), t, s.vo - .1, .5, 12);
+    const tw = cue(sy.id, sy.title.split(' ')[0].toLowerCase().slice(0, 5));
+    sc.querySelectorAll('.stitle .word').forEach((w, i) => { rv(w, t, tw - .15 + i * .09, .5, 36); });
+    sc.querySelectorAll('.bul').forEach((el, j) => { const b = sy.bul[j]; rv(el, t, cue(sy.id, b[1], b[2] || 0) - .1, .5, 20); });
+    const panel = sc.querySelector('.panel'); const pp = eo(P(t, t0 + .3, t0 + 1.1)); panel.style.opacity = pp; panel.style.transform = `translateX(${(1 - pp) * 60}px)`;
+    ANIM[sy.id](t, s, sc);
+  });
+  // GELINCIR
+  if (fadeScene('gelincir', t)) { const s = SC.gelincir;
+    rv($('#gq'), t, s.start + .2, .6, 30);
+    const g = $('#gpath'), L = g._L || (g._L = g.getTotalLength()); const tg = cue('gelincir', 'tergelincir'), dd = cue('gelincir', 'dosa'), di = cue('gelincir', 'dia');
+    // progress: rise until 'tergelincir', dip, then resume at 'dia'
+    const p = .5 * eio(P(t, s.start + .5, tg)) + .14 * eio(P(t, tg, tg + 1.2)) + .36 * eio(P(t, di, di + 2.6));
+    g.style.strokeDasharray = `${L} ${L}`; g.style.strokeDashoffset = L * (1 - p); g.setAttribute('transform', 'translate(0 120)');
+    const pt = g.getPointAtLength(L * p); $('#ghead').setAttribute('cx', pt.x); $('#ghead').setAttribute('cy', pt.y + 120);
+    $('#gdip').setAttribute('r', 14 * eback(P(t, tg + 1, tg + 1.4))); $('#gdip').setAttribute('transform', 'translate(0 120)');
+    const re = P(t, di - .2, di + 1.2); $('#gre').setAttribute('r', 14 + 50 * re); $('#gre').style.opacity = (1 - re) * (re > 0 ? 1 : 0); $('#gre').setAttribute('transform', 'translate(0 120)');
+    rv($('#gc1'), t, dd - .1, .5, 16); rv($('#gc2'), t, di - .1, .5, 16);
+  }
+  // ILMU
+  if (fadeScene('ilmu', t)) { const s = SC.ilmu;
+    rv($('#lq'), t, s.start + .2, .6, 30);
+    drawPaths($('#sc-ilmu'), P(t, s.start + .3, s.start + 2.6));
+    const lr = P(t, cue('ilmu', 'tuntutlah'), cue('ilmu', 'tuntutlah') + 1); $('#lrays').style.opacity = lr * (.7 + .3 * Math.sin(t * 3));
+    [['allah', 0], ['rasulullah', 0], ['ulama', 0]].forEach(([w], i) => { const a = cue('ilmu', w); const el = $('#lt' + i); rv(el, t, a - .15, .55, 0);
+      el.style.transform = `translateX(${(1 - eo(P(t, a - .15, a + .45))) * 80}px)`; });
+  }
+  // DOA + END
+  if (fadeScene('doa', t)) { const s = SC.doa, bz = cue('doa', 'bersihkan'), endA = s.vo + SC.doa.words[SC.doa.words.length - 1].e - SC.doa.vo + .9;
+    const out1 = 1 - P(t, endA, endA + .6);
+    $('#d1').style.opacity = rv($('#d1'), t, s.start + .2) * out1 * (1 - .5 * P(t, bz - .3, bz));
+    const p2 = rv($('#d2'), t, bz - .1, .7, 40); $('#d2').style.opacity = p2 * out1;
+    for (let i = 0; i < 7; i++) { const a = i / 7 * 6.28 + t * .25, conv = eio(P(t, bz - .5, bz + 1.2)), R = lerp(460, 360, conv);
+      const e = $('#dr' + i); e.setAttribute('cx', 960 + Math.cos(a) * R * 1.7); e.setAttribute('cy', 560 + Math.sin(a) * R * .9);
+      e.style.opacity = eo(P(t, s.start + .3 + i * .1, s.start + .9 + i * .1)) * .8 * out1; }
+    const ec = $('#endcard'); ec.style.opacity = P(t, endA + .3, endA + .9);
+    for (let i = 0; i < 7; i++) { const el = $('#em' + i), st = endA + .5 + i * .12, p = eback(P(t, st, st + .6)); el.style.opacity = clamp(P(t, st, st + .3)); el.style.transform = `translateY(${(1 - p) * 60}px)`; }
+    rv($('#endnote'), t, endA + 1.8, .6, 10);
+  }
+  renderCaps(t);
+  $('#cap').style.opacity *= (t > SC.doa.end - 8 ? 0 : 1);
+};
+
+const ANIM = {
+  s1(t, s, sc) { const b = cue('s1', 'serta'), p = eio(P(t, b - .2, b + .6));
+    sc.querySelector('#c1L').setAttribute('transform', `translate(${-60 * p} 0)`); sc.querySelector('#c1ML').setAttribute('transform', `translate(${-70 * p} ${20 * p}) rotate(${-14 * p})`);
+    sc.querySelector('#c1MR').setAttribute('transform', `translate(${70 * p} ${-20 * p}) rotate(${-14 * p})`); sc.querySelector('#c1R').setAttribute('transform', `translate(${60 * p} 0)`);
+    const sp = P(t, b - .1, b + .5); const k = sc.querySelector('#c1spark'); k.setAttribute('transform', `scale(${.4 + sp * 1.4})`); k.style.opacity = sp > 0 && sp < 1 ? 1 - sp : 0;
+    const st = eback(P(t, cue('s1', 'berhenti'), cue('s1', 'berhenti') + .5)); const tx = sc.querySelector('#c1t'); tx.style.opacity = clamp(st); tx.setAttribute('transform', `scale(${.6 + .4 * st})`);
+    const sh = P(t, s.start, b) * (1 - P(t, b, b + .2)); sc.querySelector('#c1L').parentNode.setAttribute('transform', `translate(370 350) translate(${Math.sin(t * 40) * 3 * sh} 0)`); },
+  s2(t, s, sc) { drawPaths(sc.querySelector('.panel'), P(t, s.start + .4, s.start + 2.2));
+    const a = cue('s2', 'rasa'), y = lerp(-250, 30, Math.pow(P(t, a - .6, a + .3), 2)); const d = sc.querySelector('#c2drop');
+    d.setAttribute('transform', `translate(0 ${y})`); d.style.opacity = t < a + .3 ? clamp(P(t, a - .6, a - .4)) : 0;
+    const r = P(t, a + .3, a + 1.5); const rp = sc.querySelector('#c2rip'); rp.setAttribute('rx', 10 + 160 * r); rp.setAttribute('ry', 4 + 60 * r); rp.setAttribute('cy', 30); rp.style.opacity = r > 0 ? 1 - r : 0;
+    sc.querySelector('#c2fill').style.opacity = .55 * eo(P(t, a + .3, a + 1.8)) * (.85 + .15 * Math.sin(t * 3)); },
+  s3(t, s, sc) { const els = sc.querySelectorAll('.dr'); const a = s.start + .4, b = cue('s3', 'tidak');
+    [[0, a, a + 1.2], [1, a + 1, a + 1.4], [2, b - .2, b + .5], [3, b + .3, b + .7]].forEach(([i, x, y]) => { const e = els[i], L = e._L || (e._L = e.getTotalLength()); e.style.strokeDasharray = `${L} ${L}`; e.style.strokeDashoffset = L * (1 - eio(P(t, x, y))); });
+    rv(sc.querySelector('#c3t'), t, cue('s3', 'bersumpah'), .5, 0);
+    sc.querySelector('.panel svg g').setAttribute('transform', `translate(370 350) rotate(${t < b ? (t - s.start) * 40 : (b - s.start) * 40})`); },
+  s4(t, s, sc) { ['solat', 'puasa', 'zakat'].forEach((w, i) => { const a = cue('s4', w); const p = eback(P(t, a - .1, a + .4)); const g = sc.querySelector('#c4c' + i);
+      g.style.opacity = clamp(P(t, a - .1, a + .1)); g.setAttribute('transform', `translate(${150 + i * 220} 120) scale(${.5 + .5 * p})`); });
+    const cal = sc.querySelector('#c4cal'); const ca = eo(P(t, s.start + .5, s.start + 1.2)); cal.style.opacity = ca;
+    const q = cue('s4', 'qada'), e = cue('s4', 'beragak-agak') + .4; let n = 0;
+    for (let i = 0; i < 28; i++) { const st = lerp(q, e, i / 28), p = eo(P(t, st, st + .25)); sc.querySelector('#tk' + i).style.strokeDashoffset = 60 * (1 - p); if (p > .5) n++; }
+    const tx = sc.querySelector('#c4cnt'); tx.textContent = n ? `${n} hari dicatat & diqada` : ''; },
+  s5(t, s, sc) { const h = cue('s5', 'harta'), d = cue('s5', 'dipulangkan'), w = cue('s5', 'sejengkal'), bg = cue('s5', 'bagi'), md = cue('s5', 'mendoakan'), nm = cue('s5', 'namun'), db = cue('s5', 'dibetulkan');
+    const coin = sc.querySelector('#c5coin'), arc = sc.querySelector('#c5arc'), L = arc._L || (arc._L = arc.getTotalLength());
+    const cp = eio(P(t, d - .2, d + 1.1)); const pt = arc.getPointAtLength(L * cp);
+    const phaseA = 1 - P(t, bg - .4, bg); coin.setAttribute('transform', `translate(${pt.x} ${pt.y}) scale(${eback(P(t, h, h + .5))})`); coin.style.opacity = clamp(P(t, h, h + .3)) * phaseA; arc.style.opacity = .7 * clamp(P(t, h, h + .3)) * phaseA;
+    const ld = sc.querySelector('#c5land'); ld.style.opacity = eo(P(t, w - .1, w + .4)) * phaseA;
+    const bub = sc.querySelector('#c5bub'), phB = P(t, bg - .1, bg + .4) * (1 - P(t, nm - .4, nm)); bub.style.opacity = phB * (1 - .7 * P(t, md - .2, md + .3));
+    const hp = eio(P(t, md, md + 1.3)), hx = lerp(150, 590, hp), hy = 300 - Math.sin(hp * Math.PI) * 170 - 120;
+    const ht = sc.querySelector('#c5heart'); ht.setAttribute('transform', `translate(${hx} ${hy}) scale(${1.3 + .2 * Math.sin(t * 6)})`); ht.style.opacity = P(t, md - .1, md + .2) * (1 - P(t, nm - .4, nm));
+    const ft = sc.querySelector('#c5fit'); ft.style.opacity = P(t, nm - .1, nm + .4); const stp = eback(P(t, db - .1, db + .35)); const sp = sc.querySelector('#c5stamp');
+    sp.style.opacity = clamp(P(t, db - .1, db + .1)); sp.setAttribute('transform', `translate(0 110) rotate(-10) scale(${2 - stp})`); },
+  s6(t, s, sc) { const m = cue('s6', 'matahari'), su = eio(P(t, m - .2, m + 1.6)); sc.querySelector('#c6sun').setAttribute('transform', `translate(170 ${lerp(560, 330, su)})`);
+    const fl = P(t, s.start + .5, s.end - 1.5); sc.querySelector('#c6top').setAttribute('y', -150 + 150 * fl); sc.querySelector('#c6top').setAttribute('height', 150 * (1 - fl));
+    sc.querySelector('#c6bot').setAttribute('y', 150 - 140 * fl); sc.querySelector('#c6stream').style.opacity = fl > 0 && fl < 1 ? .9 : 0; },
+  s7(t, s, sc) { const a = cue('s7', 'ikhlas'), al = cue('s7', 'allah'), hp = eback(P(t, a - .2, a + .5));
+    sc.querySelector('#c7heart').setAttribute('transform', `scale(${.62 * hp * (1 + .03 * Math.sin(t * 4))})`); sc.querySelector('#c7heart').style.opacity = clamp(P(t, a - .2, a));
+    const ry = sc.querySelector('#c7rays'); ry.style.opacity = eo(P(t, a, a + .8)) * (.6 + .4 * Math.sin(t * 2.5)); ry.setAttribute('transform', `rotate(${(t - s.start) * 8})`);
+    rv(sc.querySelector('#c7ar'), t, al - .2, .7, 20);
+    sc.querySelectorAll('.bul').forEach((b) => { b.style.color = '#E6EDF8'; }); },
+};
+
+(async () => {
+  TL = await (await fetch('timeline.json')).json();
+  TL.scenes.forEach((s) => SC[s.id] = s);
+  await document.fonts.load('800 40px Jak'); await document.fonts.load('700 40px Jak'); await document.fonts.load('500 20px Int'); await document.fonts.load('600 20px Int'); await document.fonts.load('700 40px Ami', 'الله التوبة');
+  await document.fonts.ready;
+  build(); window.TOTAL = TL.total; await window.render(0); window.ready = true;
+})();
+</script>
+</body>
+</html>
