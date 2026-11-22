@@ -1,14 +1,14 @@
 import json, subprocess, numpy as np, sys
 from scipy.signal import butter, sosfilt
 from scipy.io import wavfile
-W = sys.argv[1]; SR = 48000
-tl = json.load(open(f"{W}/timeline.json")); N = int((tl["total"] + .5) * SR)
+W = sys.argv[1]; SUF = sys.argv[2] if len(sys.argv) > 2 else ""; SR = 48000
+tl = json.load(open(f"{W}/timeline{SUF}.json")); N = int((tl["total"] + .5) * SR)
 vo = np.zeros(N); fx = np.zeros(N)
 def dec(p):
     raw = subprocess.check_output(["ffmpeg","-loglevel","error","-i",p,"-f","f32le","-ac","1","-ar",str(SR),"-"])
     return np.frombuffer(raw, dtype=np.float32).astype(np.float64)
 for s in tl["scenes"]:
-    a = dec(f"{W}/vo/{s['id']}.mp3"); i = int(s["vo"] * SR); vo[i:i+len(a)] += a[:N-i]
+    a = dec(f"{W}/vo{SUF}/{s['id']}.mp3"); i = int(s["vo"] * SR); vo[i:i+len(a)] += a[:N-i]
 rng = np.random.default_rng(1)
 def whoosh(t0, dur=1.1, amp=.10):
     n = int(dur*SR); x = rng.standard_normal(n); out = np.zeros(n)
@@ -29,5 +29,5 @@ bed = bed / np.abs(bed).max() * .05 * (1 + .3*np.sin(np.arange(N)/SR*2*np.pi/23)
 fade = np.minimum(1, np.minimum(np.arange(N)/(2*SR), (N-np.arange(N))/(3*SR)))
 mix = vo + fx + bed * fade
 mix = mix / np.abs(mix).max() * .9
-wavfile.write(f"{W}/audio.wav", SR, (mix*32767).astype(np.int16))
+wavfile.write(f"{W}/audio{SUF}.wav", SR, (mix*32767).astype(np.int16))
 print("ok", N/SR)
